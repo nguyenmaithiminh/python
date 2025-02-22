@@ -1,0 +1,12 @@
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    
+    lx = [n for n in range(0,x+1)]
+    ly = [n for n in range(0,y+1)]
+    lz = [n for n in range(0,z+1)]
+    
+    l=[[i,j,k] for i in lx for j in ly for k in lz if i + j + k != n]
+    print(l)

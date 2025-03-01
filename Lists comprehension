@@ -10,3 +10,8 @@ if __name__ == '__main__':
     
     l=[[i,j,k] for i in lx for j in ly for k in lz if i + j + k != n]
     print(l)
+
+
+
+
+    

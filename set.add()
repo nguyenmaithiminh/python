@@ -1,0 +1,16 @@
+#Input Format
+
+# The first line contains an integer , the total number of country stamps.
+# The next  lines contains the name of the country where the stamp is from.
+
+s = set()
+lists = []
+if __name__ == '__main__':
+    N = int(input())
+
+  
+    for _ in range(N):
+        country = str(input())
+        s.add(country)
+        
+    print(len(s))

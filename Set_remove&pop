@@ -1,0 +1,20 @@
+n = int(input())
+s = set(map(int, input().split()))
+c = int(input())
+
+for i in range(c):
+    co = input().split()
+    command = co[0]
+    if len(co) == 2:
+        num = int(co[1])
+    
+    match command:
+        case 'pop':
+            s.pop()
+        case 'remove':
+            s.remove(num)
+        case 'discard':
+            s.discard(num)
+    #print(s)
+            
+print(sum(s))

@@ -1,0 +1,21 @@
+# Check if A is a subset of set B. Input Format
+
+# The first line will contain the number of test cases, .
+# The first line of each test case contains the number of elements in set A.
+# The second line of each test case contains the space separated elements of set A.
+# The third line of each test case contains the number of elements in set B.
+# The fourth line of each test case contains the space separated elements of set B.
+
+ntest=int(input())
+for i in range(ntest):
+    na = int(input())
+    seta = set(map(int,input().split()))
+    #print(seta)
+    nb = int(input())
+    setb = set(map(int,input().split()))
+    setdif = setb.intersection(seta)
+    #print(setdif)
+    if setdif == seta:
+        print('True')
+    else:
+        print('False')

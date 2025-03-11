@@ -1,0 +1,17 @@
+# In Python, a strict superset refers to a set that contains all the elements of another set, and additionally, has at least one more element (i.e., it is larger than the other set).In Python, a strict superset refers to a set that contains all the elements of another set, and additionally, has at least one more element (i.e., it is larger than the other set).
+# You are given a set  and  other sets. Your job is to find whether set  is a strict superset of each of the  sets.
+
+# Print True, if  is a strict superset of each of the  sets. Otherwise, print False.
+
+seta = set(map(int,input().split()))
+tests = int(input())
+ntrue = 0
+for i in range(tests):
+    setb = set(map(int,input().split()))
+    #intersect = seta.intersection(setb)
+    if seta.intersection(setb) == setb and len(seta) > len(setb):
+        ntrue += 1
+if ntrue == tests:
+    print('True')
+else:
+    print('False')

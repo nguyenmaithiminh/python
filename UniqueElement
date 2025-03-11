@@ -1,0 +1,23 @@
+# One fine day, a finite number of tourists come to stay at the hotel.The tourists consist of:
+# → A Captain.
+# → An unknown group of families consisting of  members per group where  ≠ .
+
+# The Captain was given a separate room, and the rest were given one room per group. Output the Captain's room number -> find an elements that occur only once in a list
+
+k = int(input())
+rooms = list(map(int,input().split()))
+
+# Initialize an empty dictionary
+frequency = {}
+
+# Loop through the list and count occurrences of each element
+for item in my_list:
+    if item in frequency:  # If item is already in the dictionary
+        frequency[item] += 1  # Increment the count
+    else:
+        frequency[item] = 1  # Otherwise, add the item with count 1
+
+# Print elements that occur only once
+for item, count in frequency.items():
+    if count == 1:
+        print(item)

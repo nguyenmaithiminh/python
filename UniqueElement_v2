@@ -1,0 +1,16 @@
+# One fine day, a finite number of tourists come to stay at the hotel.The tourists consist of:
+# → A Captain.
+# → An unknown group of families consisting of  members per group where  ≠ .
+
+# The Captain was given a separate room, and the rest were given one room per group. Output the Captain's room number -> find an elements that occur only once in a list
+
+k = int(input())
+rooms = list(map(int,input().split()))
+
+set_room  = set(rooms)
+
+for room in set_room:
+    rooms.remove(room)
+
+captain_room = set_room.difference(rooms)
+print(captain_room.pop())

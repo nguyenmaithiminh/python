@@ -1,0 +1,24 @@
+#There is an array of  integers. 
+#There are also  disjoint sets,  and , each containing  integers. You like all the integers in set  and dislike all the integers in set . Your initial happiness is . For each  integer in the array, if , you add  to your happiness. If , you add  to your happiness. Otherwise, your happiness does not change. Output your final happiness at the end.
+#Note: Since  and  are sets, they have no repeated elements. However, the array might contain duplicate elements.
+
+nm = list(map(int,input().split()))
+array = list(map(int,input().split()))
+seta = set(map(int,input().split()))
+setb = set(map(int,input().split()))
+
+# Create a dictionary containing value of array and its frequency
+from collections import Counter
+frequency_dict = dict(Counter(array)) 
+
+setarray = set(array)
+
+happiness = 0
+
+for x in seta:
+    happiness += (1 * frequency_dict.get(x,0))
+
+for y in setb:
+    happiness -= (1 * frequency_dict.get(y,0))   
+           
+print(happiness)

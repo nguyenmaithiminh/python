@@ -1,0 +1,5 @@
+input()
+a = input().split()
+h = set(input().split())
+s = set(input().split())
+print(sum(1 if x in h else -1 if x in s else 0 for x in a))

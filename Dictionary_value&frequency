@@ -11,8 +11,6 @@ setb = set(map(int,input().split()))
 from collections import Counter
 frequency_dict = dict(Counter(array)) 
 
-setarray = set(array)
-
 happiness = 0
 
 for x in seta:

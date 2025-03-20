@@ -1,0 +1,16 @@
+# Input: x = 121
+# Output: true
+# Explanation: 121 reads as 121 from left to right and from right to left.
+
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        num = x
+        reversed_num = 0
+        if x>=0:
+            while num != 0:
+                digit = num % 10
+                reversed_num = reversed_num * 10 + digit
+                num //= 10
+            return reversed_num == x
+        else:
+            return 1==0

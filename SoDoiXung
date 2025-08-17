@@ -1,0 +1,61 @@
+#Số đối xứng
+# Tin học trẻ 2025 - Toàn quốc - Bảng A
+#https://oj.chuyentin.pro/problem_contest/9139
+
+dg = []
+
+n = int(input())
+temp = n
+l = len(str(n))
+print(l)
+for i in range(l,0,-1):
+  d = temp % 10
+  #print(i,d)
+  dg.insert(0,d)
+  temp = temp // 10
+
+if l % 2 == 0:
+  mid = l // 2
+else:
+  mid = l // 2 + 1
+
+dgori = dg.copy()
+ 
+pos = False # check if an increase of any digits after the first two digits is possible
+
+dg[-1] = dg[0]
+
+for i in range(1,l-1):
+  for j in range(i+1,mid+1):
+    if dg[j] != 9:
+      pos = True
+      print(j)
+      break
+    print(pos)
+  if pos == True:
+    dg[i] = min(dg[i],dg[-(i+1)])
+    dg[-(i+1)] = dg[i]
+    
+    if dg[i] <= dgori[i]:
+      for j in range(i+1,l-i-1):
+        if dg[j] != 9:
+          dg[j] = dg[j] + 1
+          dg[-(j+1)] = dg[j]
+          break
+        else:
+          dg[-(j+1)] = dg[j]
+    else:
+      for j in range(i+1,l-i-1):
+        dg[j] = 0
+    break
+          
+print(dg)
+print(dgori)
+
+for m in range(0,l):
+  if dg[m] > dgori[m]:
+    for n in range(m+1,l-m-1):
+      dg[n] = 0
+    break
+
+print(dg)

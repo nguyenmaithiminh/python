@@ -1,0 +1,51 @@
+#Contest 05.09.2025 / Bai3_Chiahet
+
+T = int(input())
+
+for i in range(T):
+  n, k = map(int,input().split())
+  a = list(map(int,input().split()))
+  l0 = l1 = l2 = 0
+  check = False
+  
+  for nums in a:
+    if nums % 3 == 0:
+      l0 += 1
+      if l0 == k:
+        check = True
+        break
+    elif nums % 3 == 1:
+      l1 += 1
+      if l1 == k and k%3 == 0:
+        check = True
+        break
+    elif nums % 3 == 2:
+      l2 += 1   
+      if l2 == k and k%3 == 0:
+        check = True
+        break
+
+  x0 = l0 ##chac chan l0 < k vi neu no lon hon hoac bang k thi while se khong can chay      
+  #x0 + x1 + x2 = k, x1 + 2*x2 % 3 ==0
+  while (check == False and x0 >= 0):
+    rest = k - x0
+    if rest % 3 == 0 and (l1 >= rest or l2>=rest):
+      check = True
+    
+    elif rest % 2 ==0 and (l1 >= (rest//2) and l2>= (rest//2)):
+      check = True
+      
+    else:
+      for x1 in range(0,min(l1,rest)+1):
+        x2 = rest - x1
+        if x2 < 0:
+          break
+        elif x2 <= l2 and (x1 + 2*x2) % 3 == 0:
+          check = True
+          break
+    x0 -= 1
+      
+  if check == True:
+    print('YES')
+  else:
+    print('NO')
